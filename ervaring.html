@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hoe Clean for Good van onderbuikgevoel naar rust en overzicht ging. Een verhaal over grip, vertrouwen en betere beslissingen.">
+  <title>Clean for Good — Stromina</title>
+  <link rel="icon" type="image/webp" href="Photo's/stromina_logo_transparent.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ---- Case study specific, built on top of the existing tokens ---- */
+    .case-hero{position:relative;min-height:78svh;display:grid;place-items:center;text-align:center;padding:160px 24px 90px;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,rgba(146,199,239,.10) 0%,transparent 60%),var(--black)}
+    .case-hero-inner{max-width:1000px;position:relative;z-index:1}
+    .case-hero .client-tag{display:inline-flex;align-items:center;gap:12px;margin:0 auto 34px;padding:9px 18px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#d4d4d3}
+    .case-hero .client-tag img{width:22px;height:22px;border-radius:50%;object-fit:cover}
+    .case-hero h1{margin:0;font-family:var(--serif);font-weight:500;line-height:1.0;letter-spacing:-3px;font-size:clamp(46px,6.4vw,96px)}
+    .case-hero h1 em{color:var(--blue);font-style:italic}
+    .case-hero .lede{max-width:660px;margin:34px auto 0;color:var(--muted);font-size:clamp(17px,1.5vw,20px);line-height:1.75}
+
+    /* full-bleed story bands */
+    .band{width:100%;padding:120px max(32px,calc((100% - 1200px)/2))}
+    .band + .band{border-top:1px solid rgba(255,255,255,.10)}
+    .band-inner{max-width:1200px;margin:0 auto}
+
+    .story-lead{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:start}
+    .story-lead .eyebrow{margin-bottom:20px}
+    .story-lead h2{margin:0;font-family:var(--serif);font-weight:500;letter-spacing:-2px;line-height:1.02;font-size:clamp(38px,4.6vw,64px)}
+    .story-lead h2 em{color:var(--blue);font-style:italic}
+    .story-lead .body p{color:#c6c8ca;font-size:19px;line-height:1.85;margin:0 0 24px}
+    .story-lead .body p:last-child{margin-bottom:0}
+    .story-lead .body strong{color:var(--white);font-weight:600}
+
+    /* the "before" — pain, quiet and heavy */
+    .pijn-band{background:linear-gradient(180deg,rgba(146,199,239,.03),transparent)}
+    .pijn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:64px}
+    .pijn-card{padding:40px 34px;border:1px solid rgba(255,255,255,.12);border-radius:22px;background:rgba(21,25,31,.35);transition:.25s}
+    .pijn-card:hover{border-color:var(--line);background:rgba(21,25,31,.6);transform:translateY(-3px)}
+    .pijn-card .mark{font-family:var(--serif);font-size:40px;color:var(--blue);line-height:1;margin-bottom:22px;opacity:.9}
+    .pijn-card h3{margin:0 0 12px;font-size:21px;font-family:var(--serif);font-weight:500;color:var(--white);line-height:1.25}
+    .pijn-card p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+
+    /* the turn / pull quote */
+    .turn{text-align:center}
+    .turn .kanteling{max-width:920px;margin:0 auto;font-family:var(--serif);font-weight:500;font-style:italic;letter-spacing:-1.5px;line-height:1.18;font-size:clamp(30px,4vw,52px);color:var(--white)}
+    .turn .kanteling em{color:var(--blue);font-style:italic}
+    .turn .sub{max-width:620px;margin:34px auto 0;color:var(--muted);font-size:18px;line-height:1.8}
+
+    /* rust — the after feeling */
+    .rust-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:60px}
+    .rust-card{padding:44px 40px;border-left:3px solid var(--blue);background:linear-gradient(135deg,rgba(146,199,239,.07),rgba(146,199,239,.02));border-radius:0 18px 18px 0}
+    .rust-card h3{margin:0 0 14px;font-size:26px;font-family:var(--serif);font-weight:500;color:var(--white);line-height:1.2}
+    .rust-card p{margin:0;color:#c6c8ca;font-size:16px;line-height:1.8}
+
+    /* dashboard showcase — full width */
+    .showcase{background:var(--black);padding:110px 0}
+    .showcase .band-inner{max-width:1440px;padding:0 max(32px,calc((100% - 1440px)/2))}
+    .showcase-head{text-align:center;max-width:720px;margin:0 auto 66px}
+    .showcase-head .eyebrow{margin-bottom:16px}
+    .showcase-head h2{margin:0;font-family:var(--serif);font-weight:500;letter-spacing:-2px;font-size:clamp(38px,5vw,68px)}
+    .showcase-head h2 em{color:var(--blue);font-style:italic}
+    .showcase-head p{margin:22px auto 0;color:var(--muted);font-size:17px;line-height:1.8;max-width:600px}
+
+    .shot{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(146,199,239,.22);background:#0c0f13;box-shadow:0 30px 80px rgba(0,0,0,.45);display:inline-block}
+    .shot img{width:auto;height:auto;max-width:100%;display:block}
+    .shot-caption{display:flex;align-items:baseline;gap:14px;margin:22px 4px 0}
+    .shot-caption .num{font-size:12px;font-weight:700;letter-spacing:2px;color:var(--blue)}
+    .shot-caption .txt h4{margin:0 0 6px;font-size:19px;font-family:var(--serif);font-weight:500;color:var(--white)}
+    .shot-caption .txt p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+
+    .shot-full{margin-bottom:40px;text-align:center}
+    .shot-duo{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:40px;text-align:center}
+
+    /* closing cta reuses .contact vibe */
+    .case-cta{text-align:center;padding:150px 24px;background:radial-gradient(110% 90% at 50% 100%,rgba(146,199,239,.09),transparent 60%),var(--black)}
+    .case-cta-inner{max-width:820px;margin:0 auto}
+    .case-cta h2{margin:0;font-family:var(--serif);font-weight:500;letter-spacing:-2px;line-height:1.05;font-size:clamp(38px,5vw,72px)}
+    .case-cta h2 em{color:var(--blue);font-style:italic}
+    .case-cta p{margin:26px auto 0;color:var(--muted);font-size:18px;line-height:1.8;max-width:620px}
+    .case-cta .footer-note{margin-top:40px;font-size:14px;color:var(--muted)}
+    .case-cta .footer-note a{color:var(--blue);font-weight:600}
+
+    @media(max-width:900px){
+      .band{padding:80px 22px}
+      .story-lead{grid-template-columns:1fr;gap:34px}
+      .pijn-grid{grid-template-columns:1fr;gap:18px}
+      .rust-grid{grid-template-columns:1fr;gap:16px}
+      .shot-duo{grid-template-columns:1fr;gap:40px}
+      .showcase{padding:80px 0}
+    }
+    @media(max-width:560px){
+      .case-hero{padding:130px 18px 70px;min-height:auto}
+      .rust-card{padding:32px 26px}
+      .pijn-card{padding:32px 26px}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Stromina home">
+      <img src="Photo's/stromina_logo_transparent.webp" alt="" class="brand-mark">
+      <span>Stromina</span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menu openen"><span></span><span></span></button>
+    <nav id="main-nav" class="main-nav" aria-label="Hoofdnavigatie">
+      <a href="index.html#diensten">Wat wij doen</a>
+      <a href="werkmethodiek.html">Werkmethodiek</a>
+      <a href="sectoren.html">Sectoren</a>
+      <a href="ervaring.html">Ervaring</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="case-hero" aria-labelledby="case-title">
+      <div class="case-hero-inner reveal">
+        <span class="client-tag">
+          <img src="Photo's/cleanforgood logo new.webp" alt="">
+          Klantverhaal — Clean for Good
+        </span>
+        <h1 id="case-title">Van onderbuikgevoel<br>naar <em>rust en grip.</em></h1>
+        <p class="lede">Een groeiend schoonmaakbedrijf dat hard werkte, maar het gevoel had de controle kwijt te raken. Dit is het verhaal van hoe dat gevoel omsloeg in vertrouwen.</p>
+      </div>
+    </section>
+
+    <!-- THE SITUATION -->
+    <section class="band pijn-band reveal">
+      <div class="band-inner">
+        <div class="story-lead">
+          <div>
+            <p class="eyebrow">Waar het begon</p>
+            <h2>Hard werken, en tóch het gevoel <em>iets te missen.</em></h2>
+          </div>
+          <div class="body">
+            <p>Clean for Good groeide snel. Van een handjevol klanten naar honderden vaste adressen door heel Auckland. Van buiten zag alles er gezond uit. Maar vanbinnen sloop er iets in dat veel ondernemers herkennen: <strong>hard werken, en aan het eind van de maand toch niet precies kunnen zeggen waarom het wel of niet goed ging.</strong></p>
+            <p>Beslissingen werden genomen op ervaring en gevoel. Meestal ging dat goed. Maar niemand wist het zeker. Verdiende die ene klant nou eigenlijk iets op? Reden de teams slim, of maakten ze onnodig kilometers? De cijfers waren er wel, ergens, maar niemand kon er een helder verhaal uit halen.</p>
+            <p>En dat kost energie. Niet de energie van hard werken, maar de sluipende vermoeidheid van <strong>twijfel bij elke keuze.</strong></p>
+          </div>
+        </div>
+
+        <div class="pijn-grid">
+          <div class="pijn-card">
+            <div class="mark">&ldquo;</div>
+            <h3>Beslissen in het donker</h3>
+            <p>Elke week keuzes maken over prijzen, planning en groei, zonder een betrouwbaar beeld om op te leunen. Steeds net iets te veel gokken.</p>
+          </div>
+          <div class="pijn-card">
+            <div class="mark">&ldquo;</div>
+            <h3>Cijfers die niet klopten</h3>
+            <p>Informatie zat verspreid over systemen, mails en appjes. Geen enkele plek gaf het volledige, eerlijke verhaal van hoe het bedrijf er écht voor stond.</p>
+          </div>
+          <div class="pijn-card">
+            <div class="mark">&ldquo;</div>
+            <h3>Grip die ontbrak</h3>
+            <p>Het gevoel dat er ergens geld en tijd weglekte, zonder precies te weten waar. Wel het vermoeden, niet het bewijs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE TURN -->
+    <section class="band turn reveal">
+      <div class="band-inner">
+        <p class="kanteling">Wat als je elke ochtend gewoon <em>zou wéten</em> hoe je bedrijf ervoor staat?</p>
+        <p class="sub">Geen twijfel, geen zoeken. Eén helder overzicht dat je vertrouwt. Dat was het doel. Niet meer data, maar meer rust.</p>
+      </div>
+    </section>
+
+    <!-- THE AFTER / RUST -->
+    <section class="band reveal">
+      <div class="band-inner">
+        <div class="story-lead">
+          <div>
+            <p class="eyebrow">Wat er veranderde</p>
+            <h2>Van ruis naar een <em>helder overzicht.</em></h2>
+          </div>
+          <div class="body">
+            <p>We brachten alle losse informatie samen en lieten die zichzelf, maand na maand, automatisch ordenen tot iets wat je in één oogopslag begrijpt. Geen ingewikkelde software om bij te houden. Geen handwerk. <strong>Gewoon een overzicht dat er elke maand vanzelf staat.</strong></p>
+            <p>Het verschil zit niet in de techniek. Het zit in het gevoel dat het teruggeeft: <strong>de rust om te sturen op wat je zíet, in plaats van op wat je vermoedt.</strong></p>
+          </div>
+        </div>
+
+        <div class="rust-grid">
+          <div class="rust-card">
+            <h3>Zekerheid, elke dag</h3>
+            <p>Beslissingen over prijs, planning en groei rusten nu op actuele cijfers. De twijfel is eruit. Wat overblijft is vertrouwen in de eigen koers.</p>
+          </div>
+          <div class="rust-card">
+            <h3>Eindelijk zicht op winst</h3>
+            <p>Voor het eerst zichtbaar welke klanten en welke wijken echt renderen. Groei werd een keuze op basis van bewijs, niet van gevoel.</p>
+          </div>
+          <div class="rust-card">
+            <h3>Rust in de organisatie</h3>
+            <p>Uren handwerk die verdwenen, tijd die terugvloeit naar de mensen en het vak. Aandacht gaat weer naar wat er echt toe doet.</p>
+          </div>
+          <div class="rust-card">
+            <h3>Klaar voor de toekomst</h3>
+            <p>Een fundament dat meegroeit. Verder uitbreiden voelt niet langer als loslaten, maar als bouwen op iets wat stevig staat.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD SHOWCASE (full width, screenshots go here) -->
+    <section class="band showcase reveal">
+      <div class="band-inner">
+        <div class="showcase-head">
+          <p class="eyebrow">Het resultaat, zichtbaar</p>
+          <h2>Het overzicht dat <em>rust</em> gaf</h2>
+          <p>Van een berg ruwe gegevens naar dashboards die meteen antwoord geven. Dit is wat Clean for Good nu elke maand vanzelf voor zich ziet.</p>
+        </div>
+
+        <!-- FULL WIDTH HERO SCREENSHOT -->
+        <div class="shot-full">
+          <div class="shot">
+            <img src="Photo's/dashboard1.webp" alt="Totaaloverzicht dashboard Clean for Good">
+          </div>
+          <div class="shot-caption">
+            <span class="num">01</span>
+            <div class="txt">
+              <h4>Het totaaloverzicht</h4>
+              <p>Omzet, winst en prestaties per klant en per team, in één blik te vatten. Het beeld waar elke maandochtend mee begint.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- TWO SIDE BY SIDE -->
+        <div class="shot-duo">
+          <div>
+            <div class="shot">
+              <img src="Photo's/Dashboard-Clean-for-Good.webp" alt="Geografisch dashboard">
+            </div>
+            <div class="shot-caption">
+              <span class="num">02</span>
+              <div class="txt">
+                <h4>Waar het werk zit</h4>
+                <p>De spreiding van het werk over de stad, in kaart gebracht. Zichtbaar waar routes slimmer kunnen en waar groei loont.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="shot">
+              <img src="Photo's/dashboard3.webp" alt="Team en inzet dashboard">
+            </div>
+            <div class="shot-caption">
+              <span class="num">03</span>
+              <div class="txt">
+                <h4>Rust voor het team</h4>
+                <p>Inzicht in uren en verdeling per schoonmaker. Eerlijker plannen, met oog voor de mensen die het werk doen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA -->
+    <section class="case-cta reveal">
+      <div class="case-cta-inner">
+        <h2>Herken jij dit <em>gevoel?</em></h2>
+        <p>Dat knagende idee dat u iets over het hoofd ziet, hoort niet bij ondernemen. Het hoort bij een gebrek aan overzicht. En dat overzicht, dat is precies waar wij voor zorgen.</p>
+        <a class="button button-blue" href="contact.html">Plan een vrijblijvend verkenningsgesprek <span aria-hidden="true">↗</span></a>
+        <p class="footer-note">Of bel direct: <a href="tel:+31680050248">+31 (6) 800 50 248</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Stromina</h4>
+        <p>Helpt organisaties overzicht te krijgen in data.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p><a href="tel:+31680050248">+31 (6) 800 50 248</a></p>
+        <p><a href="mailto:info@stromina.nl">info@stromina.nl</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Juridisch</h4>
+        <p><a href="privacyverklaring.html">Privacyverklaring</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2024</span> Stromina. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    (function(){
+      var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+      var els=document.querySelectorAll('.reveal');
+      if('IntersectionObserver' in window){
+        var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.12});
+        els.forEach(function(el){io.observe(el);});
+      } else { els.forEach(function(el){el.classList.add('visible');}); }
+      var btn=document.querySelector('.menu-button'), nav=document.getElementById('main-nav');
+      if(btn&&nav){btn.addEventListener('click',function(){var open=nav.classList.toggle('open');btn.setAttribute('aria-expanded',open);});}
+    })();
+  </script>
+</body>
+</html>

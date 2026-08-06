@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Neem contact op met Stromina en laten we kennismaken over jouw vraagstuk.">
+  <title>Contact — Stromina</title>
+  <link rel="icon" type="image/webp" href="Photo's/stromina_logo_transparent.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Stromina home">
+      <img src="Photo's/stromina_logo_transparent.webp" alt="" class="brand-mark">
+      <span>Stromina</span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menu openen"><span></span><span></span></button>
+    <nav id="main-nav" class="main-nav" aria-label="Hoofdnavigatie">
+      <a href="index.html#diensten">Wat wij doen</a>
+      <a href="werkmethodiek.html">Werkmethodiek</a>
+      <a href="sectoren.html">Sectoren</a>
+      <a href="ervaring.html">Ervaring</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="content-shell">
+      <section id="contact-form" class="section contact-form reveal">
+        <div class="contact-form-content">
+          <div class="contact-form-left">
+            <p class="eyebrow">Contact</p>
+            <h2>Laten we kennismaken</h2>
+            <div class="contact-person">
+              <img src="Photo's/Profile photo.webp" alt="Jesse van der Wijngaart" class="profile-photo">
+              <h3>Jesse van der Wijngaart</h3>
+              <p class="role">OPRICHTER — STROMINA CONSULTING</p>
+            </div>
+            <div class="contact-info">
+              <div class="info-block">
+                <p class="label">E-MAIL</p>
+                <p><a href="mailto:info@stromina.nl">info@stromina.nl</a></p>
+              </div>
+              <div class="info-block">
+                <p class="label">TELEFOON</p>
+                <p><a href="tel:+31680050248">+31 (6) 800 50 248</a></p>
+              </div>
+              <div class="info-block">
+                <p class="label">ADRES</p>
+                <p>Prinsenboschlaan 48<br>Prinsenbeek, Nederland</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-right">
+            <form id="contactForm" class="form-group">
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="naam">NAAM</label>
+                  <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
+                </div>
+                <div class="form-field">
+                  <label for="email">E-MAIL</label>
+                  <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="organisatie">ORGANISATIE</label>
+                  <input type="text" id="organisatie" name="organisatie" placeholder="Jouw organisatie (optioneel)">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-field full-width">
+                  <label for="bericht">BERICHT</label>
+                  <textarea id="bericht" name="bericht" placeholder="Vertel ons over uw vraagstuk..." rows="6" required></textarea>
+                </div>
+              </div>
+              <button type="submit" class="button button-blue">Verstuur bericht</button>
+              <div id="successMessage" class="success-message" style="display:none;">
+                <p>Bedankt! Uw bericht is verstuurd. We nemen snel contact met u op.</p>
+              </div>
+              <div id="errorMessage" class="error-message" style="display:none;">
+                <p>Verzenden is niet gelukt. Probeer het opnieuw of mail direct naar <a href="mailto:info@stromina.nl">info@stromina.nl</a>.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Stromina</h4>
+        <p>Helpt organisaties overzicht te krijgen in data.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p><a href="tel:+31680050248">+31 (6) 800 50 248</a></p>
+        <p><a href="mailto:info@stromina.nl">info@stromina.nl</a></p>
+      </div>
+      <div class="footer-section">
+        <h4>Juridisch</h4>
+        <p><a href="privacyverklaring.html">Privacyverklaring</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year">2024</span> Stromina. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
