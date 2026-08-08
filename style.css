@@ -56,7 +56,7 @@
 
 @keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 
-.wat-wij-doen{background:var(--black);padding:100px 0}.wij-doen-items{display:flex;flex-direction:column;gap:40px;max-width:1200px;margin:0 auto}.wij-doen-item{padding:40px;text-align:left;border-left:3px solid var(--blue);width:50%}.wij-doen-item h3{margin:0;font-size:28px;color:var(--white);font-family:var(--serif);font-weight:500;line-height:1.2}.wij-doen-item:nth-child(even){margin-left:auto;margin-right:0;text-align:right;border-left:none;border-right:3px solid var(--blue)}
+.wat-wij-doen{background:var(--black);padding:100px 0}#wat-wij-doen-title{font-size: 40px;}.wij-doen-items{display:flex;flex-direction:column;gap:40px;max-width:1200px;margin:0 auto}.wij-doen-item{padding:40px;text-align:left;border-left:3px solid var(--blue);width:50%}.wij-doen-item h3{margin:0;font-size:28px;color:var(--white);font-family:var(--serif);font-weight:500;line-height:1.2}.wij-doen-item:nth-child(even){margin-left:auto;margin-right:0;text-align:right;border-left:none;border-right:3px solid var(--blue)}
 
 .herkenning{background:var(--black);padding:80px 0}.herkenning-content{max-width:1200px;margin:0 auto;padding:60px 40px;background:linear-gradient(135deg,rgba(146,199,239,.08) 0%,rgba(146,199,239,.03) 100%);border:2px solid var(--blue);border-radius:20px;position:relative;overflow:hidden}.herkenning-content::before{content:'';position:absolute;top:-50%;right:-50%;width:600px;height:600px;background:radial-gradient(circle,rgba(146,199,239,.1) 0%,transparent 70%);border-radius:50%;pointer-events:none}.herkenning-content p:first-child{position:relative;z-index:1}.herkenning-content h2{position:relative;z-index:1;color:var(--white);font-size:clamp(38px,5vw,56px)}.herkenning-content p:last-child{position:relative;z-index:1;color:var(--muted);font-size:16px;line-height:1.8;margin-top:20px;max-width:800px}
 
@@ -65,6 +65,8 @@
 @media(max-width:560px){.herkenning{padding:60px 0}.herkenning-content{padding:30px 20px;border-radius:12px}.herkenning-content h2{font-size:32px}}
 
 @media(max-width:900px){.wij-doen-item,.wij-doen-item:nth-child(even){width:100%;text-align:left;border-left:3px solid var(--blue);border-right:none;margin-left:0;margin-right:0}.wij-doen-item{padding:30px 20px}}
+
+@media (max-width: 560px){#wat-wij-doen-title{font-size: 38px;}}
 
 .site-footer{background:var(--panel);border-top:1px solid rgba(146,199,239,.2);padding:60px 28px 40px}.footer-content{display:grid;grid-template-columns:repeat(3,1fr);gap:60px;max-width:1200px;margin:0 auto 40px}.footer-section:last-child{text-align:right}.footer-section h4{margin:0 0 16px;font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--blue)}.footer-section p{margin:0 0 12px;font-size:14px;color:var(--muted);line-height:1.6}.footer-section a{color:var(--blue);text-decoration:none;transition:color .2s}.footer-section a:hover{color:var(--white)}.footer-bottom{text-align:center;padding-top:40px;border-top:1px solid rgba(146,199,239,.15);font-size:13px;color:var(--muted)}
 
